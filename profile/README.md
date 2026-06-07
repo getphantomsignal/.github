@@ -37,20 +37,22 @@ phantomsignal scan <target>     # rich panel output — ports, DNS, tech, geo, a
 phantomsignal web               # launch the Shadow Grid web UI
 ```
 
-A modular, plugin-driven OSINT platform with 30+ intelligence API integrations, ghost mode scanning, cyberpunk web UI, and full CLI support.
+A modular, plugin-driven OSINT platform with 46+ intelligence API integrations, ghost mode scanning, cyberpunk web UI, and full CLI support.
 
 **Capabilities:** `web recon` · `network intelligence` · `people profiling` · `threat analysis` · `ghost mode` · `export pipeline`
 
 ---
 
-## What's New — v1.3.0
+## What's New — v1.4.2
 
 | | |
 |---|---|
-| 🖥️ **Rich CLI panels** | `phantomsignal scan <target>` renders module-specific panels — DNS records, port table with VERSION/BANNER/RISK, tech stack grade A–F, GeoIP/ASN, red anomaly callout |
-| 🎯 **nmap integration** | Port scanner chains `nmap -sV -O` for full version detection and OS fingerprinting; falls back to pure-Python async prober automatically |
-| 🌐 **Expanded port coverage** | 99 common ports by default (up from 56) — WinRM, Webmin, InfluxDB, Radmin, Kubernetes, Docker API, and more |
-| 🌑 **Web UI parity** | Results page renders structured output per result type (port cards, DNS tables, security grade, TLS, geo flags) matching CLI panels |
+| 📡 **16 new intelligence APIs** | Social, identity, and threat intel now spans Twitch, Mastodon, Keybase, Gravatar, HackerNews, Tumblr, Flickr, Spotify, Steam, VK, Telegram, Discord, Facebook Graph, EmailRep, Intelligence X, and Abstract Phone — 46+ integrations total |
+| 🔑 **Ghost Key invalid-key detection** | TEST button distinguishes a rejected key (HTTP 401/403) from a working-but-empty result — invalid keys show an amber `⚠ INVALID` badge instead of a false `✓ OK` |
+| ⚡ **AlienVault OTX fix** | Section requests now run concurrently via `asyncio.gather` with an 8 s per-section cap, eliminating the consistent 30 s timeout on the `reputation` endpoint |
+| 🔄 **WebSocket sync** | Server emits current scan progress to late-joining clients; polling fallback keeps results accurate on slow connections |
+| 📦 **Export works out of the box** | Output defaults to `/tmp` — no config required after install. Override with `PHANTOMSIGNAL_EXPORT_DIR` or `--output` |
+| 🛠️ **Clean async pipeline** | Module coroutines are created lazily, eliminating `RuntimeWarning: coroutine was never awaited` noise on every scan |
 
 ---
 
