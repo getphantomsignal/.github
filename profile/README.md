@@ -43,16 +43,16 @@ A modular, plugin-driven OSINT platform with 46+ intelligence API integrations, 
 
 ---
 
-## What's New — v1.4.2
+## What's New — v1.4.3
 
 | | |
 |---|---|
+| 🎯 **Quick probe full intel coverage** | The intel orchestrator now correctly routes every target type to all relevant APIs — username targets trigger all social and people-intel sources, email targets include threat-intel and breach APIs, domain targets include email-discovery (Hunter.io), IP targets include dark-web sources (Intelligence X). Previously these were silently skipped. |
 | 📡 **16 new intelligence APIs** | Social, identity, and threat intel now spans Twitch, Mastodon, Keybase, Gravatar, HackerNews, Tumblr, Flickr, Spotify, Steam, VK, Telegram, Discord, Facebook Graph, EmailRep, Intelligence X, and Abstract Phone — 46+ integrations total |
 | 🔑 **Ghost Key invalid-key detection** | TEST button distinguishes a rejected key (HTTP 401/403) from a working-but-empty result — invalid keys show an amber `⚠ INVALID` badge instead of a false `✓ OK` |
 | ⚡ **AlienVault OTX fix** | Section requests now run concurrently via `asyncio.gather` with an 8 s per-section cap, eliminating the consistent 30 s timeout on the `reputation` endpoint |
 | 🔄 **WebSocket sync** | Server emits current scan progress to late-joining clients; polling fallback keeps results accurate on slow connections |
 | 📦 **Export works out of the box** | Output defaults to `/tmp` — no config required after install. Override with `PHANTOMSIGNAL_EXPORT_DIR` or `--output` |
-| 🛠️ **Clean async pipeline** | Module coroutines are created lazily, eliminating `RuntimeWarning: coroutine was never awaited` noise on every scan |
 
 ---
 
