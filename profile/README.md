@@ -24,35 +24,35 @@ Open-source OSINT intelligence framework for security researchers, penetration t
 
 ## PhantomSignal — OSINT Intelligence Framework
 
-[![PyPI](https://img.shields.io/pypi/v/phantomsignal?style=flat-square&color=b026ff&logo=pypi&logoColor=white)](https://pypi.org/project/phantomsignal/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/phantomsignal?style=flat-square&color=00ff41&logo=pypi&logoColor=white)](https://pypi.org/project/phantomsignal/)
-[![Stars](https://img.shields.io/github/stars/getphantomsignal/phantomsignal?style=flat-square&color=00ff41&logo=github)](https://github.com/getphantomsignal/phantomsignal/stargazers)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-00f3ff?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![License](https://img.shields.io/badge/license-MIT-00ff41?style=flat-square)](https://github.com/getphantomsignal/phantomsignal/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20Docker-b026ff?style=flat-square)](https://github.com/getphantomsignal/phantomsignal)
+[![PyPI](https://img.shields.io/pypi/v/phantomsignal?style=flat-square&color=ff7a45&logo=pypi&logoColor=white)](https://pypi.org/project/phantomsignal/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/phantomsignal?style=flat-square&color=35d0ff&logo=pypi&logoColor=white)](https://pypi.org/project/phantomsignal/)
+[![Stars](https://img.shields.io/github/stars/getphantomsignal/phantomsignal?style=flat-square&color=ff7a45&logo=github)](https://github.com/getphantomsignal/phantomsignal/stargazers)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-35d0ff?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-ff7a45?style=flat-square)](https://github.com/getphantomsignal/phantomsignal/blob/main/LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20Docker-a78bfa?style=flat-square)](https://github.com/getphantomsignal/phantomsignal)
 
 ```bash
 pip install phantomsignal
 phantomsignal scan <target>     # rich panel output — ports, DNS, tech, geo, anomalies
-phantomsignal web               # launch the Shadow Grid web UI
+phantomsignal web               # launch the web console (Dark / Neon / Light)
 ```
 
-A modular, plugin-driven OSINT platform with 46+ intelligence API integrations, ghost mode scanning, cyberpunk web UI, and full CLI support.
+A modular, plugin-driven OSINT platform with 46+ intelligence API integrations, covert low-and-slow scanning, a themeable web console, and full CLI support.
 
-**Capabilities:** `web recon` · `network intelligence` · `people profiling` · `threat analysis` · `ghost mode` · `export pipeline`
+**Capabilities:** `web recon` · `network intelligence` · `people profiling` · `threat analysis` · `covert scan` · `export pipeline`
 
 ---
 
-## What's New — v1.4.3
+## What's New — v1.23.0
 
 | | |
 |---|---|
-| 🎯 **Quick probe full intel coverage** | The intel orchestrator now correctly routes every target type to all relevant APIs — username targets trigger all social and people-intel sources, email targets include threat-intel and breach APIs, domain targets include email-discovery (Hunter.io), IP targets include dark-web sources (Intelligence X). Previously these were silently skipped. |
-| 📡 **16 new intelligence APIs** | Social, identity, and threat intel now spans Twitch, Mastodon, Keybase, Gravatar, HackerNews, Tumblr, Flickr, Spotify, Steam, VK, Telegram, Discord, Facebook Graph, EmailRep, Intelligence X, and Abstract Phone — 46+ integrations total |
-| 🔑 **Ghost Key invalid-key detection** | TEST button distinguishes a rejected key (HTTP 401/403) from a working-but-empty result — invalid keys show an amber `⚠ INVALID` badge instead of a false `✓ OK` |
-| ⚡ **AlienVault OTX fix** | Section requests now run concurrently via `asyncio.gather` with an 8 s per-section cap, eliminating the consistent 30 s timeout on the `reputation` endpoint |
-| 🔄 **WebSocket sync** | Server emits current scan progress to late-joining clients; polling fallback keeps results accurate on slow connections |
-| 📦 **Export works out of the box** | Output defaults to `/tmp` — no config required after install. Override with `PHANTOMSIGNAL_EXPORT_DIR` or `--output` |
+| 🎨 **Three switchable themes** | A theming system on semantic role tokens: **Dark** (deep-slate federal, default), **Neon** (deep-navy coral glow), and **Light** (clean, print-friendly). Segmented switch in the nav; persists and pre-paints. Every token validated to WCAG AA. |
+| 📝 **Plain-language interface** | The web UI was rewritten from codenames to clear labels — Dashboard, New Scan, Scans, Profiler, Integrations — with Findings, Risk Score, and Data Sources throughout |
+| 🔤 **Roboto + signal mark** | Roboto for UI text (tables/terminal/code stay monospace), a font-based `∿` signal glyph, and a PS-monogram favicon |
+| 🖱️ **Clickable dashboard** | Stat cards are now links straight into the matching view |
+| 🔄 **One-click re-scan** | Re-run any completed scan against the same target with its original profile, modules, and options |
+| 📊 **Honest risk gradient** | The Risk Score meter runs a true green → amber → red ramp, so low reads green (safe) at a glance |
 
 ---
 
