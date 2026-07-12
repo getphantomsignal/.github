@@ -1,4 +1,4 @@
-# PHANTOM SIGNAL
+# ∿ PHANTOM SIGNAL
 
 > *"See everything. Leave no trace."*
 
